@@ -15,7 +15,6 @@
         <item>Inundación</item>
         <item>Huracán</item>
     </string-array>
-
     <string-array name="emergency_types_images">
         <item>ic_earthquake</item>
         <item>ic_fire</item>
@@ -24,7 +23,6 @@
         <item>ic_flood</item>
         <item>ic_hurricane</item>
     </string-array>
-
     <string-array name="emergency_numbers">
         <item>128</item>
         <item>115</item>
@@ -36,7 +34,6 @@
         <item>2268-6149</item>
         <item>113</item>
     </string-array>
-
     <string-array name="emergency_numbers_text">
         <item>Cruz Roja</item>
         <item>Bomberos</item>
@@ -48,7 +45,6 @@
         <item>Médicina Legal</item>
         <item>Dir. Telefónico</item>
     </string-array>
-
     <string-array name="emergency_numbers_images">
         <item>ic_cruz_roja</item>
         <item>ic_bomberos</item>
@@ -60,5 +56,8 @@
         <item>ic_medicina_legal</item>
         <item>ic_directorio_telefonico</item>
     </string-array>
+
+    <string name="title_activity_web">WebActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

@@ -1,5 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <dimen name="textHeaderSize">25sp</dimen>
     <dimen name="gridViewImageViewHeight">150dp</dimen>
     <dimen name="gridViewTextViewSize">12sp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
 </resources>
