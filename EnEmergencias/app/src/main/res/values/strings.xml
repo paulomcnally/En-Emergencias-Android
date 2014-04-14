@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">En Emergencias</string>
+    <string name="empty">Empty</string>
+    <string name="action_settings">Settings</string>
+    <string name="header_emergency_types">Tipos de emergencias</string>
+    <string name="header_emergency_numbers">Números de emergencia</string>
+
+    <string-array name="emergency_types">
+        <item>Terremoto</item>
+        <item>Incendio</item>
+        <item>Tsunami</item>
+        <item>Erupción volcánica</item>
+        <item>Inundación</item>
+        <item>Huracán</item>
+    </string-array>
+
+    <string-array name="emergency_types_images">
+        <item>ic_earthquake</item>
+        <item>ic_fire</item>
+        <item>ic_tsunami</item>
+        <item>ic_volcanic_eruption</item>
+        <item>ic_flood</item>
+        <item>ic_hurricane</item>
+    </string-array>
+
+    <string-array name="emergency_numbers">
+        <item>128</item>
+        <item>115</item>
+        <item>118</item>
+        <item>2277-3822</item>
+        <item>127</item>
+        <item>125</item>
+        <item>2249-2761</item>
+        <item>2268-6149</item>
+        <item>113</item>
+    </string-array>
+
+    <string-array name="emergency_numbers_text">
+        <item>Cruz Roja</item>
+        <item>Bomberos</item>
+        <item>Policía</item>
+        <item>Defensa Civil</item>
+        <item>ENACAL</item>
+        <item>Energía Eléctrica</item>
+        <item>INETER</item>
+        <item>Médicina Legal</item>
+        <item>Dir. Telefónico</item>
+    </string-array>
+
+    <string-array name="emergency_numbers_images">
+        <item>ic_cruz_roja</item>
+        <item>ic_bomberos</item>
+        <item>ic_policia</item>
+        <item>ic_defensa_civil</item>
+        <item>ic_enacal</item>
+        <item>ic_energia_electrica</item>
+        <item>ic_ineter</item>
+        <item>ic_medicina_legal</item>
+        <item>ic_directorio_telefonico</item>
+    </string-array>
+
+</resources>

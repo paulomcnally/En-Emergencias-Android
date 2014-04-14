@@ -1,0 +1,40 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mc.emergency.MainActivity"
+    android:background="@color/pageBackground">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            style="@style/textHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/header_emergency_types"
+            />
+
+        <com.mc.emergency.ExpandableHeightGridView
+            style="@style/gridView"
+            android:id="@+id/mainGridViewTypes"
+            android:numColumns="6" />
+
+        <TextView
+            style="@style/textHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/header_emergency_numbers"
+            />
+
+        <com.mc.emergency.ExpandableHeightGridView
+            style="@style/gridView"
+            android:id="@+id/mainGridViewNumbers"
+            android:numColumns="6" />
+
+    </LinearLayout>
+
+</ScrollView>

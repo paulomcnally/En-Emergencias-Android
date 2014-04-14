@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="textHeaderSize">24sp</dimen>
+    <dimen name="gridViewImageViewHeight">190dp</dimen>
+    <dimen name="gridViewTextViewSize">20sp</dimen>
+</resources>
