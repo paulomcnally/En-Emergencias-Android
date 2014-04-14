@@ -1,6 +1,8 @@
 package com.mc.emergency;
 
+import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,13 +19,14 @@ public class MainActivity extends ActionBarActivity {
 
     private ExpandableHeightGridView gridViewTypes;
     private ExpandableHeightGridView gridViewNumbers;
+    private static Resources res;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Resources res = getResources();
+        res = getResources();
 
         // set types on gridView
 
@@ -47,8 +50,11 @@ public class MainActivity extends ActionBarActivity {
         gridViewNumbers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //text.setText((String) (gridView.getItemAtPosition(position)));
-                Log.i("ITEM_CLICKED", "" + (String) (gridViewNumbers.getItemAtPosition(position)));
+
+                Intent dial = new Intent();
+                dial.setAction("android.intent.action.DIAL");
+                dial.setData(Uri.parse("tel:" + res.getStringArray(R.array.emergency_numbers)[position] ));
+                startActivity(dial);
             }
         });
 
