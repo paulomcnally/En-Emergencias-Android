@@ -29,7 +29,7 @@
         </activity>
         <activity
             android:name="com.mc.emergency.WebActivity"
-            android:label="@string/title_activity_web"
+            android:label="@string/empty"
             android:configChanges="orientation|keyboardHidden">
         </activity>
     </application>

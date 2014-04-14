@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ExpandableListView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -31,14 +32,25 @@ public class MainActivity extends ActionBarActivity {
         // set types on gridView
 
         gridViewTypes = (ExpandableHeightGridView) this.findViewById(R.id.mainGridViewTypes);
-        CustomGridAdapter gridAdapterTypes = new CustomGridAdapter(MainActivity.this, res.getStringArray(R.array.emergency_types),res.getStringArray(R.array.emergency_types_images));
+        CustomGridAdapter gridAdapterTypes = new CustomGridAdapter(MainActivity.this, res.getStringArray(R.array.emergency_types_enabled),res.getStringArray(R.array.emergency_types_images));
         gridViewTypes.setAdapter(gridAdapterTypes);
         gridViewTypes.setExpanded(true);
         gridViewTypes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //text.setText((String) (gridView.getItemAtPosition(position)));
-                Log.i("ITEM_CLICKED", "" + (String) (gridViewTypes.getItemAtPosition(position)));
+
+                if( !res.getStringArray(R.array.emergency_types_pages)[position].equals("empty") ){
+                    Intent intent = new Intent();
+                    intent.setClass(getApplicationContext(), WebActivity.class);
+                    intent.putExtra("page", res.getStringArray(R.array.emergency_types_pages)[position]);
+                    intent.putExtra("title", res.getStringArray(R.array.emergency_types)[position]);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    getApplicationContext().startActivity(intent);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), res.getString(R.string.message_empty), Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 

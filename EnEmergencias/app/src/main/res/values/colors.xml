@@ -2,4 +2,7 @@
 <resources>
     <color name="pageBackground">#E5E5E5</color>
     <color name="textHeader">#333333</color>
+    <color name="itemState">#FFFFFF</color>
+    <color name="itemPressed">#333333</color>
+    <color name="itemFocused">#333333</color>
 </resources>
