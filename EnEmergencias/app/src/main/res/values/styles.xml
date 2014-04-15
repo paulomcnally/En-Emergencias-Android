@@ -40,6 +40,7 @@
         <item name="android:scrollbars">none</item>
         <item name="android:stretchMode">columnWidth</item>
         <item name="android:gravity">center</item>
+        <item name="android:listSelector">@drawable/item</item>
     </style>
 
 </resources>

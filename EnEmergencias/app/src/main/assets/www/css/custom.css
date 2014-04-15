@@ -18,13 +18,8 @@ body{
 .item-header{
     font-size: 22px;
     font-weight: bold;
-    background-color: #F86924;
     padding: 4px;
-    color: #FFFFFF;
-    border-top: 1px solid #F86924;
-    border-left: 1px solid #F86924;
-    border-right: 1px solid #F86924;
-    border-bottom: 1px solid #F86924;
+    color: #35BC7A;
 }
 
 .item-sub-header{

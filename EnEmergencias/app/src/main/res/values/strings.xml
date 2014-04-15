@@ -4,7 +4,7 @@
     <string name="app_name">En Emergencias</string>
     <string name="empty"></string>
     <string name="action_settings">Settings</string>
-    <string name="header_emergency_types">Tipos de emergencias</string>
+    <string name="header_emergency_types">Tipos de emergencia</string>
     <string name="header_emergency_numbers">Números de emergencia</string>
     <string name="message_empty">El contenido para esta emergencia estará disponible en la próxima versión.</string>
 

@@ -2,15 +2,15 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- disabled state -->
-    <item android:drawable="@color/itemState" android:state_enabled="false"/>
+    <item android:drawable="@color/blue" android:state_enabled="false"/>
 
     <!-- enabled and pressed state -->
-    <item android:drawable="@color/itemPressed" android:state_enabled="true" android:state_pressed="true"/>
+    <item android:drawable="@color/blue" android:state_enabled="true" android:state_pressed="true"/>
 
     <!-- enabled and focused state -->
-    <item android:drawable="@color/itemFocused" android:state_enabled="true" android:state_focused="true"/>
+    <item android:drawable="@color/blue" android:state_enabled="true" android:state_focused="true"/>
 
     <!-- enabled state -->
-    <item android:drawable="@color/itemState" android:state_enabled="true"/>
+    <item android:drawable="@color/blue" android:state_enabled="true"/>
 
 </selector>
