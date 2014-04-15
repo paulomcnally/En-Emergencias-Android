@@ -35,9 +35,7 @@ body{
     position: relative;
     overflow: hidden;
     padding: 5px;
-    border-left: 1px solid #35BC7A;
-    border-right: 1px solid #35BC7A;
-    border-bottom: 1px solid #35BC7A;
+    border: 1px solid #35BC7A;
 }
 
 .item-container img{
