@@ -1,0 +1,38 @@
+.panel-content ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.panel-content ul li {
+	border-bottom: 1px solid #dddddd;
+	padding: 10px 15px 15px 15px;
+}
+
+.panel-content ul li:last-child {
+	border-bottom: 0;
+}
+
+.panel-default>.panel-heading {
+color: #ffffff;
+background-color: #FE2E2E;
+border-color: #dddddd;
+font-weight: bold;
+}
+
+.panel-default:last-child {
+	margin-bottom: 0;
+}
+
+.container {
+	padding: 15px;
+}
+
+i{
+	margin-right: 5px;
+}
+
+.glyphicon {
+	margin-right: 5px;
+}
+	

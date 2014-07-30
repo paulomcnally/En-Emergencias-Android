@@ -1,23 +1,27 @@
 package com.mc.emergency;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.media.Image;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.telephony.TelephonyManager;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
+import android.webkit.WebView;
 import android.widget.AdapterView;
-import android.widget.ExpandableListView;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.AdSize;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -26,17 +30,19 @@ public class MainActivity extends ActionBarActivity {
     private ExpandableHeightGridView gridViewNumbers;
     private static Resources res;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         res = getResources();
 
         // set types on gridView
 
         gridViewTypes = (ExpandableHeightGridView) this.findViewById(R.id.mainGridViewTypes);
-        CustomGridAdapter gridAdapterTypes = new CustomGridAdapter(MainActivity.this, res.getStringArray(R.array.emergency_types_enabled),res.getStringArray(R.array.emergency_types_images));
+        CustomGridAdapter gridAdapterTypes = new CustomGridAdapter(MainActivity.this, res.getStringArray(R.array.emergency_types_enabled), res.getStringArray(R.array.emergency_types_images));
         gridViewTypes.setAdapter(gridAdapterTypes);
         gridViewTypes.setExpanded(true);
         gridViewTypes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -52,9 +58,7 @@ public class MainActivity extends ActionBarActivity {
                 i.startAnimation(alpha);
 
 
-                if( !res.getStringArray(R.array.emergency_types_pages)[position].equals("empty") ){
-
-
+                if (!res.getStringArray(R.array.emergency_types_pages)[position].equals("empty")) {
 
                     Intent intent = new Intent();
                     intent.setClass(getApplicationContext(), WebActivity.class);
@@ -67,8 +71,7 @@ public class MainActivity extends ActionBarActivity {
                     alphaOut.setDuration(0);
                     alphaOut.setFillAfter(true);
                     i.startAnimation(alphaOut);
-                }
-                else{
+                } else {
                     Toast.makeText(getApplicationContext(), res.getString(R.string.message_empty), Toast.LENGTH_LONG).show();
                 }
 
@@ -86,11 +89,12 @@ public class MainActivity extends ActionBarActivity {
 
                 Intent dial = new Intent();
                 dial.setAction("android.intent.action.DIAL");
-                dial.setData(Uri.parse("tel:" + res.getStringArray(R.array.emergency_numbers)[position] ));
+                dial.setData(Uri.parse("tel:" + res.getStringArray(R.array.emergency_numbers)[position]));
                 startActivity(dial);
             }
         });
 
     }
+
 
 }
