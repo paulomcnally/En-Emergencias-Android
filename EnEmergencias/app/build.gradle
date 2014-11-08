@@ -1,19 +1,29 @@
-apply plugin: 'android'
+apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '19.1'
+
+    signingConfigs {
+        release {
+            storeFile file("keystore.jks") //check that the file exists
+            storePassword ""
+            keyAlias "enemergencias"
+            keyPassword ""
+        }
+    }
+
+    compileSdkVersion 21
+    buildToolsVersion '21.1.1'
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 19
+        targetSdkVersion 21
         versionCode 3
         versionName "1.2"
     }
 
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
@@ -23,6 +33,6 @@ android {
 dependencies {
     // You must install or update the Support Repository through the SDK manager to use this dependency.
     // The Support Repository (separate from the corresponding library) can be found in the Extras category.
-    compile 'com.android.support:appcompat-v7:19.0.1'
-    compile 'com.google.android.gms:play-services:+'
+    compile 'com.android.support:appcompat-v7:21.0.0'
+    compile 'com.google.android.gms:play-services:6.1.71'
 }
