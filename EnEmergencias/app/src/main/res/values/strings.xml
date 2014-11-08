@@ -22,6 +22,7 @@
         <item>Tsunami</item>
         <item>Erupción volcánica</item>
         <item>Inundación</item>
+        <item>Huracán</item>
     </string-array>
     <string-array name="emergency_types_pages">
         <item>emergencyEarthquake</item>
@@ -29,7 +30,7 @@
         <item>emergencyTsunami</item>
         <item>emergencyVolcanicEruption</item>
         <item>emergencyFlood</item>
-        <item>empty</item>
+        <item>emergencyHurricane</item>
     </string-array>
     <string-array name="emergency_types_images">
         <item>ic_earthquake</item>
