@@ -1,30 +1,27 @@
 package com.mc.emergency;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.telephony.TelephonyManager;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
-import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.InterstitialAd;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    private static final String MY_AD_UNIT_ID = "ca-app-pub-2015513932539714/1215785827";
+
+    private InterstitialAd interstitial;
+
 
     private ExpandableHeightGridView gridViewTypes;
     private ExpandableHeightGridView gridViewNumbers;
@@ -36,6 +33,8 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // init admob
+        adMobInit();
 
         res = getResources();
 
@@ -49,6 +48,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                displayInterstitial();
 
                 ImageView i = (ImageView) parent.findViewById(R.id.grid_item_image);
 
@@ -96,5 +96,31 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    private void adMobInit() {
+        // Create the interstitial.
+        interstitial = new InterstitialAd(this);
+        interstitial.setAdUnitId(MY_AD_UNIT_ID);
+
+        // Create ad request.
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        // Begin loading your interstitial.
+        interstitial.loadAd(adRequest);
+    }
+
+    // Invoke displayInterstitial() when you are ready to display an interstitial.
+    public void displayInterstitial() {
+        if (interstitial.isLoaded()) {
+            interstitial.show();
+        }
+    }
+
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        // re-init admob
+        adMobInit();
+
+    }
 
 }
